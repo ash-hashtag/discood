@@ -43,17 +43,16 @@ document.getElementById("myId")!.innerText = `My Id: ${peer['_id']}`;
 async function startCall(id: string) {
   try {
     localStream = await getLocalStream();
-    // var localVideo: any = document.getElementById("localStream");
-    // localVideo.srcObject = localStream;
+    var localVideo: any = document.getElementById("localStream");
+    localVideo.srcObject = localStream;
     var call = peer.call(id, localStream!);
     document.getElementById("myId")!.innerText = `My Id: ${peer.id}`;
     call.on("stream", (_stream) => {
       remoteStream = _stream;
-      // var remoteVideo: any = document.getElementById("remoteStream");
-      // remoteVideo.srcObject = remoteStream;
-      // Show stream in some video/canvas element.
-      var remoteAudio: any = document.getElementById("remoteAudio");
-      remoteAudio.srcObject = remoteStream;
+      var remoteVideo: any = document.getElementById("remoteStream");
+      remoteVideo.srcObject = remoteStream;
+      // var remoteAudio: any = document.getElementById("remoteAudio");
+      // remoteAudio.srcObject = remoteStream;
     });
   } catch (err) {
     console.log("Failed to get local stream", err);
@@ -64,16 +63,16 @@ async function answerCall() {
   try {
     localStream = await getLocalStream();
     document.getElementById("myId")!.innerText = `My Id: ${peer.id}`;
-    // var localVideo: any = document.getElementById("localStream");
-    // localVideo.srcObject = localStream;
+    var localVideo: any = document.getElementById("localStream");
+    localVideo.srcObject = localStream;
     peer.on("call", (call) => {
       call.answer(localStream!);
       call.on("stream", (_stream) => {
         remoteStream = _stream;
-        var remoteAudio: any = document.getElementById("remoteAudio");
-        remoteAudio.srcObject = remoteStream;
-        // var remoteVideo: any = document.getElementById("remoteStream");
-        // remoteVideo.srcObject = remoteStream;
+        // var remoteAudio: any = document.getElementById("remoteAudio");
+        // remoteAudio.srcObject = remoteStream;
+        var remoteVideo: any = document.getElementById("remoteStream");
+        remoteVideo.srcObject = remoteStream;
       });
     });
   } catch (err) {
