@@ -58,12 +58,8 @@ document.getElementById("myId")!.innerText = `My Id: ${peer["_id"]}`;
 async function startCall(id: string) {
   try {
     localStream = await getLocalStream();
-    // var localVideo: any = document.getElementById("localStream");
-    // localVideo.srcObject = localStream;
     var call = peer.call(id, localStream!);
     document.getElementById("myId")!.innerText = `My Id: ${peer.id}`;
-    // var remoteAudio: any = document.getElementById("remoteAudio");
-    // remoteAudio.volume = 1.0;
     call.on("stream", createPeerAudio);
   } catch (err) {
     console.log("Failed to get local stream", err);
@@ -74,10 +70,8 @@ async function answerCall() {
   try {
     localStream = await getLocalStream();
     document.getElementById("myId")!.innerText = `My Id: ${peer.id}`;
-    // var localVideo: any = document.getElementById("localStream");
-    // localVideo.srcObject = localStream;
-    var remoteAudio: any = document.getElementById("remoteAudio");
-    remoteAudio.volume = 1.0;
+    // var remoteAudio: any = document.getElementById("remoteAudio");
+    // remoteAudio.volume = 1.0;
     peer.on("call", (call) => {
       call.answer(localStream!);
       call.on("stream", createPeerAudio);
