@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="peerId" />
+      <button id="start"></button>
+      <button id="end"></button>
+      <p id="myId"></p>
+    </div>
+    <video
+      autoplay="true"
+      id="localStream"
+      src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+      height="500"
+    ></video>
+    <video
+      autoplay="true"
+      id="remoteStream"
+      src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+      height="500"
+    ></video>
+
+    <!-- <script>
+        async function main() {
+            var localStream = document.getElementById("localStream");
+            const stream = await navigator.mediaDevices.getUserMedia({video: true, audio: true});
+            localStream.srcObject = stream;
+        }
+        main();
+    </script> -->
+  </body>
+</html>
