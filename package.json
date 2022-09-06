@@ -22,5 +22,8 @@
   "dependencies": {
     "peerjs": "^1.4.7"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "esbuild": "^0.15.7"
+  }
 }
