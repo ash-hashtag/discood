@@ -9,7 +9,9 @@ app.get("/", (request, response) => {
 
 app.get("/:id", (request, response) => {
     response.send(id);
-    id = request.params.id;
+    if (request.params.id != "favicon.ico") {
+        id = request.params.id;
+    }
 })
 
 app.listen({

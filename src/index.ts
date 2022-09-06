@@ -29,6 +29,7 @@ endBtn.addEventListener("click", () => {
   for (let child of children) {
     child.srcObject.getTracks().forEach((track) => track.stop());
   }
+  peers.innerText = "";
   if (localStream) {
     localStream.getTracks().forEach((track) => {
       track.stop();
@@ -50,7 +51,6 @@ function createPeerAudio(_stream: MediaStream) {
   audioElement.volume = 1;
   peers.appendChild(audioElement);
 }
-
 
 const peer = new Peer();
 console.log(peer);
