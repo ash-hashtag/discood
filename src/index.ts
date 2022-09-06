@@ -1,24 +1,6 @@
-// import { initializeApp } from "firebase/app";
-// import { addDoc, collection, getFirestore } from "firebase/firestore";
 import Peer from "peerjs";
 
 console.log("started...");
-// const firebaseConfig = {
-//   apiKey: "AIzaSyC4kICJrapX1skkUKnDFwa-v-01fbYl4YM",
-
-//   authDomain: "discood.firebaseapp.com",
-
-//   projectId: "discood",
-
-//   storageBucket: "discood.appspot.com",
-
-//   messagingSenderId: "594115515420",
-
-//   appId: "1:594115515420:web:218df40c83b6a4dec37bd9",
-// };
-
-// const app = initializeApp(firebaseConfig);
-
 var localStream: MediaStream | null;
 var remoteStream: MediaStream | null;
 
