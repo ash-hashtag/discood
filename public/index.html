@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="index.js" defer></script>
+    <!-- <script src="index.js" defer></script> -->
   </head>
   <body>
     <div>
@@ -19,20 +19,20 @@
       id="localStream"
       height="500"
     ></video> -->
-    <audio id="remoteAudio"></audio>
+    <video id="remoteAudio"></video>
     <!-- <video
       autoplay="true"
       id="remoteStream"
       height="500"
     ></video> -->
 
-    <!-- <script>
+    <script>
         async function main() {
-            var localStream = document.getElementById("localStream");
-            const stream = await navigator.mediaDevices.getUserMedia({video: true, audio: true});
+            var localStream = document.getElementById("remoteAudio");
+            const stream = await navigator.mediaDevices.getUserMedia({video: false, audio: true});
             localStream.srcObject = stream;
         }
         main();
-    </script> -->
+    </script>
   </body>
 </html>
