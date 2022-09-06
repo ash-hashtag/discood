@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "esbuild --bundle src/index.ts --outdir=public --minify",
-    "dev": ""
+    "prod": "npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/ash-hashtag/discood#readme",
   "dependencies": {
+    "peerjs": "^1.4.7"
   },
   "type": "module"
 }
