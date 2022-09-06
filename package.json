@@ -20,10 +20,12 @@
   },
   "homepage": "https://github.com/ash-hashtag/discood#readme",
   "dependencies": {
+    "fastify": "^4.5.3",
     "peerjs": "^1.4.7"
   },
   "type": "module",
   "devDependencies": {
-    "esbuild": "^0.15.7"
+    "esbuild": "^0.15.7",
+    "https": "^1.0.0"
   }
 }
