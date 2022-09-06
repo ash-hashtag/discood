@@ -47,11 +47,12 @@ async function startCall(id: string) {
     // localVideo.srcObject = localStream;
     var call = peer.call(id, localStream!);
     document.getElementById("myId")!.innerText = `My Id: ${peer.id}`;
+    var remoteAudio: any = document.getElementById("remoteAudio");
+    remoteAudio.volume = 1.0;
     call.on("stream", (_stream) => {
       remoteStream = _stream;
       // var remoteVideo: any = document.getElementById("remoteStream");
       // remoteVideo.srcObject = remoteStream;
-      var remoteAudio: any = document.getElementById("remoteAudio");
       remoteAudio.srcObject = remoteStream;
     });
   } catch (err) {
@@ -65,11 +66,12 @@ async function answerCall() {
     document.getElementById("myId")!.innerText = `My Id: ${peer.id}`;
     // var localVideo: any = document.getElementById("localStream");
     // localVideo.srcObject = localStream;
+    var remoteAudio: any = document.getElementById("remoteAudio");
+    remoteAudio.volume = 1.0;
     peer.on("call", (call) => {
       call.answer(localStream!);
       call.on("stream", (_stream) => {
         remoteStream = _stream;
-        var remoteAudio: any = document.getElementById("remoteAudio");
         remoteAudio.srcObject = remoteStream;
         // var remoteVideo: any = document.getElementById("remoteStream");
         // remoteVideo.srcObject = remoteStream;
