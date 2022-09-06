@@ -21,6 +21,7 @@
   "homepage": "https://github.com/ash-hashtag/discood#readme",
   "dependencies": {
     "fastify": "^4.5.3",
+    "fs": "^0.0.1-security",
     "peerjs": "^1.4.7"
   },
   "type": "module",

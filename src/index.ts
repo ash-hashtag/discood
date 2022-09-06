@@ -4,6 +4,13 @@ console.log("started...");
 var localStream: MediaStream | null;
 var remoteStream: MediaStream | null;
 
+async function getLocalStream() {
+  return navigator.mediaDevices.getUserMedia({
+    video: true,
+    audio: true
+  });
+}
+
 var startBtn = document.getElementById("start")!;
 console.log("adding event listeners");
 startBtn.addEventListener("click", () => {
@@ -35,10 +42,7 @@ console.log(peer);
 document.getElementById("myId")!.innerText = `My Id: ${peer['_id']}`;
 async function startCall(id: string) {
   try {
-    localStream = await navigator.mediaDevices.getUserMedia({
-      video: false,
-      audio: true,
-    });
+    localStream = await getLocalStream();
     // var localVideo: any = document.getElementById("localStream");
     // localVideo.srcObject = localStream;
     var call = peer.call(id, localStream!);
@@ -58,10 +62,7 @@ async function startCall(id: string) {
 
 async function answerCall() {
   try {
-    localStream = await navigator.mediaDevices.getUserMedia({
-      video: false,
-      audio: true,
-    });
+    localStream = await getLocalStream();
     document.getElementById("myId")!.innerText = `My Id: ${peer.id}`;
     // var localVideo: any = document.getElementById("localStream");
     // localVideo.srcObject = localStream;
