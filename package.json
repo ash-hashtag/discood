@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/ash-hashtag/discood#readme",
   "dependencies": {
-    "firebase": "^9.9.0"
   },
   "type": "module"
 }
